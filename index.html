@@ -1,0 +1,153 @@
+<!--XiaoguangMo_W1114182-->
+<!--Copyright reserved-->
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="css.css">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>hw3</title>
+        <script type="text/javascript" language="javascript">
+            var Animate = {
+                obj : null,
+                itime : 0,
+                flag : 1,
+                maxHeight : 0,
+                _$ : function(id){
+                    return "string" == typeof(id) ? document.getElementById(id) : id;
+                },
+                slideDown : function(){
+                    
+                    if(parseInt(this.obj.style.height) > this.maxHeight){
+                        this.flag = 0;
+                        return
+                    };
+                    
+                    this.obj.style.height = parseInt(this.obj.style.height) + 20 + 'px';
+                    setTimeout("Animate.slideDown()",this.itime);
+                },
+                slideUp: function(){
+                    if(parseInt(this.obj.style.height) < 1){
+                        this.flag = 1; return
+                    };
+                    this.obj.style.height = parseInt(this.obj.style.height) - 20 + 'px';
+                    var repeat = "Animate.slideUp()";
+                    setTimeout(repeat,this.itime);
+                },
+                slide : function(objid,itime,flag){
+                    this.obj = this._$(objid);
+                    this.itime = itime;
+                    this.flag=flag;
+                    
+                    if(this.flag){
+                        this.maxHeight = 480;
+                        this.obj.style.display = "block";
+                        this.obj.style.height = "0px";
+                        this.slideDown();
+                    }
+                    else {
+                        this.slideUp();
+                        var bodyHide=document.getElementById("hide-body");
+                        bodyHide.style.display="none";
+                    }
+                }
+            }
+            function createFirstTable(){
+                var table=document.getElementById("FirstTable");
+                if(table==null){
+                    var table=document.createElement("table");
+                    table.setAttribute("id","FirstTable");
+                }
+                var rows=document.getElementById("rows").value;
+                var cols=document.getElementById("cols").value;
+                for(var i=table.childNodes.length-1;i>=0;i--){
+                    table.removeChild(table.childNodes[i]);
+                }
+                var t2 = document.getElementById("SecondTable");
+                if(t2==null){
+                    var t2=document.createElement("table");
+                    t2.setAttribute("id","SecondTable");
+                }
+                for(var i=t2.childNodes.length-1;i>=0;i--){
+                    t2.removeChild(t2.childNodes[i]);
+                }
+                t2.style.border="0px #FFFFFF";
+                for(var i=0;i<rows;i++){
+                    var tr=document.createElement("tr");
+                    for(var j=0;j<cols;j++){
+                        var td=document.createElement("td");
+                        var textbox=document.createElement("input");
+                        textbox.setAttribute("type","text");
+                        textbox.setAttribute("class","cell1");
+                        td.appendChild(textbox);
+                        tr.appendChild(td);
+                    }
+                    table.appendChild(tr);
+                }
+                document.getElementById("d1").appendChild(table);
+                
+                
+                var button=document.getElementById("button");
+                if(button==null){
+                    var button=document.createElement("input");
+                    button.setAttribute("id","button");
+                }
+                button.setAttribute("type","button");
+                button.setAttribute("value","Create Table");
+                button.style.color="red";
+                button.onclick=createSecondTable;
+                document.getElementById("d1").appendChild(button);
+            }
+        
+        function createSecondTable(){
+            var t1 = document.getElementById("FirstTable");
+            var t2 = document.getElementById("SecondTable");
+
+            if(t2==null){
+                var t2=document.createElement("table");
+                t2.setAttribute("id","SecondTable");
+            }
+            t2.style.border="3px solid red";
+
+            for(var i=t2.childNodes.length-1;i>=0;i--){
+                t2.removeChild(t2.childNodes[i]);
+            }
+            for(var i=0;i<=t1.childNodes.length-1;i++){
+                var tr = t1.rows[i].cloneNode(true);
+                t2.appendChild(tr);
+            }
+            document.getElementById("d2").appendChild(t2);
+            Animate.slide("hide-body",10,1);
+            
+        }
+        function closeme(){
+            Animate.slide("hide-body",10,0);
+        }
+        </script>
+    </head>
+    <body>
+        How many rows would you like?<select id="rows">
+            <option value="1">one</option>
+            <option value="2">two</option>
+            <option value="3">three</option>
+            <option value="4">four</option>
+            <option value="5">five</option>
+        </select>
+        <br/>
+        How many cols would you like?<select id="cols">
+            <option value="1">one</option>
+            <option value="2">two</option>
+            <option value="3">three</option>
+            <option value="4">four</option>
+            <option value="5">five</option>
+        </select><br/>
+        <input type="button" value="Create" onclick="createFirstTable()">
+        <div id="d1"></div>
+        <div class="hide-body" id="hide-body">
+            <div class="close-window">
+                <a href="#" onclick="closeme();" title="close" class="close">×</a>
+                <h1>Result</h1>
+            </div>
+            <div id="d2"></div>
+        </div>
+        <div class="body-color" id="body-color"></div>
+    </body>
+</html>

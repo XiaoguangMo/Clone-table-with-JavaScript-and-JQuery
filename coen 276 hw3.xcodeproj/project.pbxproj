@@ -1,0 +1,78 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXFileReference section */
+		9F5EF3F31A96A70800224D50 /* index.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
+		9F5EF3F81A96E1BB00224D50 /* css.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = css.css; sourceTree = "<group>"; };
+		9F5EF3F91A96ED1900224D50 /* jQuery.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = jQuery.html; sourceTree = "<group>"; };
+		9F5EF3FA1A9A89CD00224D50 /* jqueryCSS.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = jqueryCSS.css; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		9F5EF3EC1A96A6F900224D50 = {
+			isa = PBXGroup;
+			children = (
+				9F5EF3FA1A9A89CD00224D50 /* jqueryCSS.css */,
+				9F5EF3F91A96ED1900224D50 /* jQuery.html */,
+				9F5EF3F81A96E1BB00224D50 /* css.css */,
+				9F5EF3F31A96A70800224D50 /* index.html */,
+			);
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXProject section */
+		9F5EF3ED1A96A6F900224D50 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+			};
+			buildConfigurationList = 9F5EF3F01A96A6F900224D50 /* Build configuration list for PBXProject "coen 276 hw3" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 9F5EF3EC1A96A6F900224D50;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+			);
+		};
+/* End PBXProject section */
+
+/* Begin XCBuildConfiguration section */
+		9F5EF3F11A96A6F900224D50 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		9F5EF3F21A96A6F900224D50 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9F5EF3F01A96A6F900224D50 /* Build configuration list for PBXProject "coen 276 hw3" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9F5EF3F11A96A6F900224D50 /* Debug */,
+				9F5EF3F21A96A6F900224D50 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9F5EF3ED1A96A6F900224D50 /* Project object */;
+}
